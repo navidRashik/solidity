@@ -3,7 +3,7 @@ contract HelloWorldContract{
     string word = "hellow World";
     address issuer;
     function HelloWorldContract(){
-        issuer = msg.sender;
+        issuer = msg.sender; 
     }
     modifier ifIssuer(){
         if(issuer != msg.sender){
