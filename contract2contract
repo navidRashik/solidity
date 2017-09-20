@@ -1,0 +1,27 @@
+pragma solidity ^0.4.0;
+
+contract CallerContract{
+
+    CalledContract toBeCalled = CalledContract(0x1526613135cbe54ee257c11dd17254328a774f4a);
+    function getNumber() constant returns(uint){
+        return toBeCalled.getNumber();
+    }
+    function getWords() constant returns(bytes32){
+        return toBeCalled.getWord();
+    }
+}
+
+contract CalledContract{
+    uint number = 42;
+    bytes32 word = "hello world";
+    
+    function getWord() constant returns(bytes32){
+        return word;
+    }
+    function setNumber(uint _number){
+        number=_number;
+    }
+    function getNumber() constant returns(uint){
+        return number;
+    }
+}
